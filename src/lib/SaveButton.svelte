@@ -9,14 +9,14 @@
       const dateFormatted = new Date(date).toISOString().slice(0, 10);
       const mdContent = saveToMd(outputData);
 
-      let mdYAML = `---\n#\n# buttons:\n#   - label:\n#     href:\n\n# authors:\n#   - Diamant\n\n---\n\n`;
+      let mdYAML = `---\n_\n# buttons:\n#   - label:\n#     href:\n\n# authors:\n#   - Diamant\n\n# heroImage: ---\n\n`;
 
       const title = window.prompt('Enter title');
       const description = window.prompt('Enter description');
       const type = window.prompt('Enter type');
 
       mdYAML = mdYAML.replace(
-        '#',
+        '_',
         `title: ${title}\ndescription: ${description}\ntype: ${type}\npubDate: ${dateFormatted}`
       );
 
