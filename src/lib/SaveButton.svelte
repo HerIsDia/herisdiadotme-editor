@@ -9,7 +9,7 @@
       const dateFormatted = new Date(date).toISOString().slice(0, 10);
       const mdContent = saveToMd(outputData);
 
-      let mdYAML = `---\n_\n# buttons:\n#   - label:\n#     href:\n\n# authors:\n#   - Diamant\n\n# heroImage: ---\n\n`;
+      let mdYAML = `---\n_\n# buttons:\n#   - label:\n#     href:\n\n# authors:\n#   - Diamant\n\n# heroImage: \n---\n\n`;
 
       const title = window.prompt('Enter title');
       const description = window.prompt('Enter description');
