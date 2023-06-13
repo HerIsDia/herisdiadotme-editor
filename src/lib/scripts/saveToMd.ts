@@ -2,11 +2,16 @@ import type { OutputData } from '@editorjs/editorjs'
 
 export const saveToMd = (data: OutputData) => {
   let md = ''
+  let title = ''
   console.log(data);
   data.blocks.forEach(block => {
     switch (block.type) {
       case 'header':
         const level = block.data.level
+        if (level == 1) {
+          title = block.data.text
+          break
+        }
         md += `${'#'.repeat(level)} ${block.data.text}\n\n`
         break
       case 'paragraph':
@@ -46,9 +51,9 @@ export const saveToMd = (data: OutputData) => {
         break
     }
   })
-  console.log(md);
+  console.log(title);
 
-  return md
+  return { md, title }
 
 
 }

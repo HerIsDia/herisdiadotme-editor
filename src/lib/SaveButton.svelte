@@ -7,13 +7,19 @@
     editor.save().then((outputData) => {
       const date = outputData.time;
       const dateFormatted = new Date(date).toISOString().slice(0, 10);
-      const mdContent = saveToMd(outputData);
+      const MdSaved = saveToMd(outputData);
+      const mdContent = MdSaved.md;
 
-      let mdYAML = `---\n_\n# buttons:\n#   - label:\n#     href:\n\n# authors:\n#   - Diamant\n\n# heroImage: ---\n\n`;
+      let mdYAML = `---\n_\n# buttons:\n#   - label:\n#     href:\n\n# authors:\n#   - Diamant\n\n# heroImage: \n---\n\n`;
 
-      const title = window.prompt('Enter title');
-      const description = window.prompt('Enter description');
-      const type = window.prompt('Enter type');
+      const title =
+        MdSaved.title != '' ? MdSaved.title : window.prompt('Enter title');
+      const d = window.prompt('Enter description');
+      const description = d != '' ? d : mdContent.slice(0, 69) + '...';
+      let type = window.prompt('Enter type');
+      while (type === '') {
+        type = window.prompt('Enter type');
+      }
 
       mdYAML = mdYAML.replace(
         '_',
