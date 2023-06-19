@@ -6,7 +6,7 @@
   const saving = () => {
     editor.save().then((outputData) => {
       const date = outputData.time;
-      const dateFormatted = new Date(date).toISOString().slice(0, 10);
+      const dateFormatted = new Date(date).toISOString();
       const MdSaved = saveToMd(outputData);
       const mdContent = MdSaved.md;
 
