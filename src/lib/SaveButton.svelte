@@ -10,7 +10,7 @@
       const MdSaved = saveToMd(outputData);
       const mdContent = MdSaved.md;
 
-      let mdYAML = `---\n_\n# buttons:\n#   - label:\n#     href:\n\n# authors:\n#   - Diamant\n\n# heroImage: \n---\n\n`;
+      let mdYAML = `---\n_\n# buttons:\n#   - label:\n#     href:\n\n# authors:\n#   - Diamant\n\n# heroImage: \n# imageCredit:\n---\n\n`;
 
       const title =
         MdSaved.title != '' ? MdSaved.title : window.prompt('Enter title');
